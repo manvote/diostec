@@ -1,3 +1,13 @@
 # https://www.robotstxt.org/robotstxt.html
+# Diostec - AI & Cloud Solutions
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://diostec.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

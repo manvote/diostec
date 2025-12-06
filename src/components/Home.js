@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SEO from "./SEO";
 import service from "../assets/services.jpg";
 import hero1 from "../assets/hero1.png";
 import hero2 from "../assets/hero2.png";
@@ -163,6 +164,12 @@ export default function Home() {
 
   return (
     <>
+      <SEO 
+        title="Diostec - AI & Cloud Solutions | Digital Transformation Services Dubai"
+        description="Leading AI and cloud solutions provider in Dubai. Transform your business with cutting-edge AI services, cloud infrastructure, BI analytics, QA testing, and managed services. Expert digital transformation partner."
+        keywords="AI solutions Dubai, cloud services UAE, digital transformation, business intelligence, QA testing, managed services, application management, IT consulting Dubai, AI company UAE"
+        canonical="https://diostec.com/"
+      />
       {/* HERO SECTION */}
       <section className="hero-section reveal" style={{ backgroundImage: `url(${heroImages[currentHeroImage]})` }}>
         <div className="hero-container">

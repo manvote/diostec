@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SEO from './SEO';
 import './AboutUs.css';
 
 export default function AboutUs() {
@@ -28,6 +29,12 @@ export default function AboutUs() {
 
   return (
     <>
+      <SEO 
+        title="About Us - Diostec | Leading AI & Cloud Solutions Provider in Dubai"
+        description="Learn about Diostec, established in 2018. We specialize in IT services and AI solutions, bridging the gap between talent and opportunity. Transforming businesses with cutting-edge technology in Dubai, UAE."
+        keywords="about diostec, IT services Dubai, AI company UAE, technology solutions, digital transformation company, software development Dubai, IT consulting"
+        canonical="https://diostec.com/about"
+      />
       {/* ABOUT US HERO SECTION */}
       <section className="about-hero-section">
         <div className="about-hero-container">

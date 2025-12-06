@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SEO from './SEO';
 import './Services.css';
 
 export default function Services() {
@@ -33,6 +34,12 @@ export default function Services() {
 
   return (
     <>
+      <SEO 
+        title="Our Services - Diostec | Cloud, AI, BI & Managed IT Services Dubai"
+        description="Explore our comprehensive IT services: Cloud Solutions, AI Development, Business Intelligence, QA Testing, Managed Services, and Application Management. Transform your business with Diostec's expert solutions in Dubai."
+        keywords="cloud services Dubai, AI solutions UAE, business intelligence, QA testing services, managed IT services, application management, IT consulting Dubai, enterprise solutions"
+        canonical="https://diostec.com/services"
+      />
       {/* SERVICES HERO SECTION */}
       <section className="services-hero-section">
         <div className="services-hero-container">
