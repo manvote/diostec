@@ -3,6 +3,36 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* ---------------- GLOBAL RESPONSIVE IMPROVEMENTS ---------------- */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve touch interactions on mobile */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent text selection on buttons */
+button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /* ---------------- HERO SECTION ---------------- */
 .hero-section {
   background: #ffff;
@@ -2432,5 +2462,694 @@
   .address-text,
   .phone-text {
     font-size: 16px;
+  }
+}
+
+/* =============================================== */
+/* COMPREHENSIVE RESPONSIVE STYLES FOR ALL DEVICES */
+/* =============================================== */
+
+/* Large Tablets & Small Laptops (1024px - 1200px) */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 56px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .who-title {
+    font-size: 48px;
+  }
+
+  .services-heading-title {
+    font-size: 48px;
+  }
+
+  .service-content-title {
+    font-size: 28px;
+  }
+
+  .project-card-title {
+    font-size: 36px;
+  }
+
+  .project-card-description {
+    font-size: 15px;
+  }
+
+  .industries-heading {
+    font-size: 40px;
+  }
+
+  .industry-slide-title {
+    font-size: 28px;
+  }
+
+  .solutions-title {
+    font-size: 42px;
+  }
+}
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 60px 30px 80px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .feature-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .who-we-are-section {
+    padding: 80px 30px;
+  }
+
+  .who-title {
+    font-size: 40px;
+  }
+
+  .services-heading-section {
+    padding: 80px 30px;
+  }
+
+  .services-heading-title {
+    font-size: 40px;
+  }
+
+  .services-expand-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .services-wrapper {
+    height: 400px;
+  }
+
+  .service-content {
+    padding: 40px;
+  }
+
+  .service-content-title {
+    font-size: 24px;
+  }
+
+  .service-description {
+    font-size: 14px;
+  }
+
+  .projects-carousel-section {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .project-card-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .project-info {
+    max-width: 100%;
+  }
+
+  .project-card-title {
+    font-size: 32px;
+  }
+
+  .project-image-side {
+    width: 100%;
+    height: 300px;
+  }
+
+  .carousel-nav-dots {
+    right: 20px;
+  }
+
+  .nav-dot {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .industries-section {
+    padding: 80px 30px;
+  }
+
+  .industries-main-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .industries-left {
+    position: static;
+  }
+
+  .industries-heading {
+    font-size: 36px;
+  }
+
+  .industry-slide {
+    padding: 40px;
+  }
+
+  .industry-slide-title {
+    font-size: 24px;
+  }
+
+  .solutions-section {
+    padding: 80px 30px;
+  }
+
+  .solutions-title {
+    font-size: 36px;
+  }
+
+  .solution-name {
+    font-size: 28px;
+  }
+}
+
+/* Mobile Devices (480px - 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 20px 60px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .cta-btn {
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+
+  .feature-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+
+  .feature-title1 {
+    font-size: 18px;
+  }
+
+  .feature-description1 {
+    font-size: 13px;
+  }
+
+  .who-we-are-section {
+    padding: 60px 20px;
+  }
+
+  .who-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .img-text {
+    width: 40px;
+    height: 40px;
+  }
+
+  .services-heading-section {
+    padding: 60px 20px;
+  }
+
+  .services-heading-main {
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .services-heading-title {
+    font-size: 32px;
+  }
+
+  .services-view-btn {
+    padding: 12px 25px;
+    font-size: 13px;
+  }
+
+  .services-expand-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .services-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .service-item {
+    height: 120px;
+    margin: 2px 0;
+  }
+
+  .service-title-vertical {
+    transform: rotate(0deg);
+    writing-mode: horizontal-tb;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+
+  .service-item:hover {
+    flex: 8;
+  }
+
+  .service-content {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .service-content-title {
+    font-size: 22px;
+  }
+
+  .service-description {
+    font-size: 13px;
+  }
+
+  .service-learn-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .service-arrow {
+    font-size: 20px;
+  }
+
+  .service-content img {
+    max-height: 200px;
+    width: 100%;
+  }
+
+  .projects-carousel-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+
+  .project-card {
+    padding: 30px 20px;
+  }
+
+  .project-card-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .project-card-title {
+    font-size: 26px;
+  }
+
+  .project-card-description {
+    font-size: 14px;
+  }
+
+  .project-details {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tech-icons {
+    gap: 10px;
+  }
+
+  .tech-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .project-read-btn {
+    padding: 12px 25px;
+    font-size: 13px;
+  }
+
+  .project-image-side {
+    width: 100%;
+    height: 250px;
+  }
+
+  .carousel-nav-dots {
+    right: 15px;
+    gap: 15px;
+  }
+
+  .nav-dot {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .scroll-top-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    left: 15px;
+    font-size: 18px;
+  }
+
+  .industries-section {
+    padding: 60px 20px;
+  }
+
+  .industries-main-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .industries-heading {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .industries-nav-arrows {
+    gap: 15px;
+  }
+
+  .industry-arrow-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .industry-slide {
+    padding: 30px 20px;
+    min-height: 400px;
+  }
+
+  .industry-slide-title {
+    font-size: 22px;
+  }
+
+  .industry-slide-description {
+    font-size: 14px;
+  }
+
+  .industry-slide-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .industry-slide-image img {
+    max-width: 200px;
+  }
+
+  .solutions-section {
+    padding: 60px 20px;
+  }
+
+  .solutions-title {
+    font-size: 28px;
+  }
+
+  .solution-row {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+
+  .solution-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .solution-name {
+    font-size: 22px;
+  }
+
+  .solution-description {
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .cta-btn {
+    padding: 12px 25px;
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .feature-title1 {
+    font-size: 16px;
+  }
+
+  .feature-description1 {
+    font-size: 12px;
+  }
+
+  .who-title {
+    font-size: 24px;
+  }
+
+  .img-text {
+    width: 35px;
+    height: 35px;
+  }
+
+  .services-heading-title {
+    font-size: 26px;
+  }
+
+  .services-view-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .service-item {
+    height: 100px;
+  }
+
+  .service-title-vertical {
+    font-size: 16px;
+  }
+
+  .service-content-title {
+    font-size: 20px;
+  }
+
+  .service-description {
+    font-size: 12px;
+  }
+
+  .service-learn-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service-arrow {
+    font-size: 18px;
+  }
+
+  .project-card {
+    padding: 20px 15px;
+  }
+
+  .project-card-title {
+    font-size: 22px;
+  }
+
+  .project-card-description {
+    font-size: 13px;
+  }
+
+  .tech-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .project-read-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .project-image-side {
+    height: 200px;
+  }
+
+  .carousel-nav-dots {
+    right: 10px;
+    gap: 12px;
+  }
+
+  .nav-dot {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .scroll-top-btn {
+    width: 35px;
+    height: 35px;
+    bottom: 10px;
+    left: 10px;
+    font-size: 16px;
+  }
+
+  .industries-heading {
+    font-size: 24px;
+  }
+
+  .industry-arrow-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .industry-slide {
+    padding: 25px 15px;
+    min-height: 350px;
+  }
+
+  .industry-slide-title {
+    font-size: 20px;
+  }
+
+  .industry-slide-description {
+    font-size: 13px;
+  }
+
+  .industry-slide-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .industry-slide-image img {
+    max-width: 150px;
+  }
+
+  .solutions-title {
+    font-size: 24px;
+  }
+
+  .solution-row {
+    padding: 25px 15px;
+  }
+
+  .solution-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-pattern span.dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .solution-name {
+    font-size: 20px;
+  }
+
+  .solution-description {
+    font-size: 13px;
+  }
+}
+
+/* Extra Small Devices (below 375px) */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .who-title {
+    font-size: 20px;
+  }
+
+  .services-heading-title {
+    font-size: 22px;
+  }
+
+  .service-title-vertical {
+    font-size: 14px;
+  }
+
+  .project-card-title {
+    font-size: 20px;
+  }
+
+  .industries-heading {
+    font-size: 20px;
+  }
+
+  .industry-slide-title {
+    font-size: 18px;
+  }
+
+  .solutions-title {
+    font-size: 20px;
+  }
+
+  .solution-name {
+    font-size: 18px;
+  }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero-section {
+    padding: 30px 20px 40px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .feature-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-carousel-section {
+    height: auto;
+    min-height: 80vh;
+  }
+
+  .project-card {
+    padding: 30px;
+  }
+
+  .industry-slide {
+    min-height: 300px;
   }
 }

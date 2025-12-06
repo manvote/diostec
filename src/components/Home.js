@@ -907,7 +907,7 @@ export default function Home() {
             <div className="footer-bottom">
               <div className="footer-address">
                 <span className="address-icon">📍</span>
-                <span className="address-text">TVH Agnitio Park (IT Park) Address: 141, Rajiv Gandhi Salai, Nehru Nagar, Perungudi, Chennai, Tamil Nadu 600096</span>
+                <span className="address-text">Conrad Office Tower, Sheikh Zayed Road, 115143 Dubai, UAE</span>
               </div>
 
               <div className="footer-copyright">
