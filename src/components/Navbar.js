@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logoImg from "../assets/Diostec_logo_3d(1).png";
+import logoImg from "../assets/Diostec_bg.png";
 import "../App.css";
 
 export default function Navbar() {
@@ -32,9 +32,8 @@ export default function Navbar() {
         </button>
 
         <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <li className="nav-item active">
+          <li className="nav-item">
             <Link to="/" onClick={closeMobileMenu}>Home</Link>
-            <span className="nav-indicator"></span>
           </li>
           <li className="nav-item">
             <Link to="/about" onClick={closeMobileMenu}>About Us</Link>
