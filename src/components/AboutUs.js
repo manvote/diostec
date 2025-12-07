@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from './SEO';
+import { useTranslation } from '../useTranslation';
 import './AboutUs.css';
 
 export default function AboutUs() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   // Scroll Reveal Effect
   useEffect(() => {
@@ -38,36 +40,36 @@ export default function AboutUs() {
       {/* ABOUT US HERO SECTION */}
       <section className="about-hero-section">
         <div className="about-hero-container">
-          <div className="about-breadcrumb">Diostec / About us</div>
+          <div className="about-breadcrumb">{t('about', 'breadcrumb')}</div>
           
-          <h1 className="about-hero-title">ABOUT US</h1>
+          <h1 className="about-hero-title">{t('about', 'heroTitle')}</h1>
           
           <div className="about-hero-description">
             <p className="about-description-text">
-              At Diostec, we believe in the transformative power of technology and the boundless <span className="highlight-orange">potential of individuals.</span> <span className="highlight-italic">Established in 2018</span> with a vision to bridge the gap between talent and opportunity, we specialize in <span className="highlight-orange">IT Services and AI productes</span> services that propel both businesses and careers forward.
+              {t('about', 'heroDesc1')}
             </p>
           </div>
 
           {/* Stats Cards */}
           <div className="about-stats-grid">
             <div className="stat-card reveal">
-              <h3 className="stat-number">100+</h3>
-              <p className="stat-label">Successfully delivered projects</p>
+              <h3 className="stat-number">{t('about', 'stat1Number')}</h3>
+              <p className="stat-label">{t('about', 'stat1Label')}</p>
             </div>
 
             <div className="stat-card reveal">
-              <h3 className="stat-number">100+</h3>
-              <p className="stat-label">Skilled software engineers</p>
+              <h3 className="stat-number">{t('about', 'stat2Number')}</h3>
+              <p className="stat-label">{t('about', 'stat2Label')}</p>
             </div>
 
             <div className="stat-card reveal">
-              <h3 className="stat-number">7 years</h3>
-              <p className="stat-label">is the average employee tenure</p>
+              <h3 className="stat-number">{t('about', 'stat3Number')}</h3>
+              <p className="stat-label">{t('about', 'stat3Label')}</p>
             </div>
 
             <div className="stat-card reveal">
-              <h3 className="stat-number">7 years</h3>
-              <p className="stat-label">of client lifetime</p>
+              <h3 className="stat-number">{t('about', 'stat4Number')}</h3>
+              <p className="stat-label">{t('about', 'stat4Label')}</p>
             </div>
           </div>
         </div>
@@ -247,7 +249,7 @@ export default function AboutUs() {
       {/* WHY WORK WITH US SECTION */}
       <section className="why-work-section">
         <div className="why-work-container">
-          <h2 className="why-work-title">WHY WORK WITH US</h2>
+          <h2 className="why-work-title">{t('about', 'whyWorkTitle')}</h2>
 
           <div className="why-work-grid">
             {/* Card 1 */}
@@ -260,9 +262,9 @@ export default function AboutUs() {
                   <line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
               </div>
-              <h3 className="why-work-card-title">Long-Term Cooperation &<br />Support</h3>
+              <h3 className="why-work-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'whyWork1Title') }}></h3>
               <p className="why-work-card-description">
-                Over 80% of our clients partner with us for 7+ years, supported by a dedicated team with 5+ years of collaboration experience.
+                {t('about', 'whyWork1Desc')}
               </p>
             </div>
 
@@ -273,9 +275,9 @@ export default function AboutUs() {
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                 </svg>
               </div>
-              <h3 className="why-work-card-title">Accelerated Software<br />Development</h3>
+              <h3 className="why-work-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'whyWork2Title') }}></h3>
               <p className="why-work-card-description">
-                We reduce development time by 50% through pre-built solutions, ensuring faster delivery of POCs, prototypes, and final products.
+                {t('about', 'whyWork2Desc')}
               </p>
             </div>
 
@@ -286,9 +288,9 @@ export default function AboutUs() {
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                 </svg>
               </div>
-              <h3 className="why-work-card-title">Quality Assurance &<br />Compliance</h3>
+              <h3 className="why-work-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'whyWork3Title') }}></h3>
               <p className="why-work-card-description">
-                Committed to CMMI and ISO standards, we ensure consistent quality, process optimization, and continuous improvement.
+                {t('about', 'whyWork3Desc')}
               </p>
             </div>
 
@@ -299,9 +301,9 @@ export default function AboutUs() {
                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                 </svg>
               </div>
-              <h3 className="why-work-card-title">Agile & SCRUM Practices</h3>
+              <h3 className="why-work-card-title">{t('about', 'whyWork4Title')}</h3>
               <p className="why-work-card-description">
-                We leverage Agile and SCRUM methodologies to enable a flexible, transparent, and collaborative project management approach.
+                {t('about', 'whyWork4Desc')}
               </p>
             </div>
           </div>
@@ -314,26 +316,26 @@ export default function AboutUs() {
           <div className="legacy-background-logo">DIOSTEC</div>
           
           <div className="legacy-content">
-            <h2 className="legacy-title">Our Legacy</h2>
+            <h2 className="legacy-title">{t('about', 'legacyTitle')}</h2>
             
             <p className="legacy-text legacy-intro">
-              <strong>Diostec Software Solutions</strong> was founded by a team of passionate individuals 7 years ago, fuelled by their vision and determination to create a better future through technology.
+              <strong>Diostec Software Solutions</strong> {t('about', 'legacyIntro')}
             </p>
 
             <p className="legacy-text">
-              Shortly after its inception, Diostec Software Solutions has positioned itself as one of the most sought-after technology companies over the world through our legendary product 'Forms*Converter' which eases Oracle Forms Migration.
+              {t('about', 'legacyPara1')}
             </p>
 
             <p className="legacy-text">
-              We started as a product development company and eventually extended our wings to legacy migrations, and now we have transcended into a Technology Company that houses competences for a large spectrum of IT practices.
+              {t('about', 'legacyPara2')}
             </p>
 
             <p className="legacy-text">
-              Diostec Software Solutions is one of the few companies that has witnessed the IT revolution in the information era and has grown along with it thereby combining experiences and also understanding its intricate nuances.
+              {t('about', 'legacyPara3')}
             </p>
 
             <p className="legacy-text legacy-highlight">
-              <em>7 years in the industry, footprint in over 20 countries and our commendable top-notch collaborations have presented us with an impeccable volume of knowledge and resources that are deployed to best use for today's and future technology demands.</em>
+              <em>{t('about', 'legacyPara4')}</em>
             </p>
           </div>
         </div>
@@ -342,9 +344,9 @@ export default function AboutUs() {
       {/* OUR CAPABILITIES SECTION */}
       <section className="capabilities-section">
         <div className="capabilities-container">
-          <h2 className="capabilities-title">Our Capabilities</h2>
+          <h2 className="capabilities-title">{t('about', 'capabilitiesTitle')}</h2>
           <p className="capabilities-subtitle">
-            Diostec has spread its wings of capabilities from a simple migration support company to the universe of following IT capabilities to meet the dynamic demands of the clients in agile and swifter routines
+            {t('about', 'capabilitiesSubtitle')}
           </p>
 
           <div className="capabilities-grid">
@@ -360,7 +362,7 @@ export default function AboutUs() {
                   <line x1="12" y1="22.08" x2="12" y2="12"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Application Migration<br />and Re-engineering</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability1') }}></h3>
             </div>
 
             <div className="capability-item reveal">
@@ -371,7 +373,7 @@ export default function AboutUs() {
                   <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Database<br />Migration</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability2') }}></h3>
             </div>
 
             <div className="capability-item reveal">
@@ -382,7 +384,7 @@ export default function AboutUs() {
                   <line x1="12" y1="17" x2="12" y2="21"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Application<br />Development</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability3') }}></h3>
             </div>
 
             {/* Row 2 */}
@@ -396,7 +398,7 @@ export default function AboutUs() {
                   <polyline points="10 9 9 9 8 9"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Application Maintenance<br />& Production Support</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability4') }}></h3>
             </div>
 
             <div className="capability-item reveal">
@@ -405,7 +407,7 @@ export default function AboutUs() {
                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Software<br />Testing</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability5') }}></h3>
             </div>
 
             <div className="capability-item reveal">
@@ -417,7 +419,7 @@ export default function AboutUs() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                 </svg>
               </div>
-              <h3 className="capability-title">IT<br />Consulting</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability6') }}></h3>
             </div>
 
             {/* Row 3 */}
@@ -428,7 +430,7 @@ export default function AboutUs() {
                   <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
                 </svg>
               </div>
-              <h3 className="capability-title">System<br />Integration</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability7') }}></h3>
             </div>
 
             <div className="capability-item reveal">
@@ -438,7 +440,7 @@ export default function AboutUs() {
                   <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Infrastructure<br />Management Services</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability8') }}></h3>
             </div>
 
             <div className="capability-item reveal">
@@ -448,7 +450,7 @@ export default function AboutUs() {
                   <line x1="12" y1="18" x2="12.01" y2="18"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Mobile Application<br />Development</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability9') }}></h3>
             </div>
 
             {/* Row 4 */}
@@ -460,7 +462,7 @@ export default function AboutUs() {
                   <path d="M12 8h.01"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Machine<br />Learning</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability10') }}></h3>
             </div>
 
             <div className="capability-item reveal">
@@ -469,7 +471,7 @@ export default function AboutUs() {
                   <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
                 </svg>
               </div>
-              <h3 className="capability-title">Cloud<br />Services</h3>
+              <h3 className="capability-title" dangerouslySetInnerHTML={{ __html: t('about', 'capability11') }}></h3>
             </div>
           </div>
         </div>
@@ -478,7 +480,7 @@ export default function AboutUs() {
       {/* OUR VALUES SECTION */}
       <section className="values-section">
         <div className="values-container">
-          <h2 className="values-title">Our Values</h2>
+          <h2 className="values-title">{t('about', 'valuesTitle')}</h2>
 
           <div className="values-grid">
             {/* Row 1 - Top 4 values */}
@@ -494,9 +496,9 @@ export default function AboutUs() {
                   <rect x="38" y="38" width="8" height="8" rx="1" fill="#f5ba93"/>
                 </svg>
               </div>
-              <h3 className="value-card-title">Enterprise Digital<br />Transformation</h3>
+              <h3 className="value-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'value1Title') }}></h3>
               <p className="value-card-text">
-                Enabling end to end enterprise digital transformation has been our mantra ever since the day we began our very first enterprise migration
+                {t('about', 'value1Desc')}
               </p>
             </div>
 
@@ -510,9 +512,9 @@ export default function AboutUs() {
                   <path d="M32 28C30 28 28 30 28 32C28 34 30 36 32 36C34 36 36 34 36 32C36 30 34 28 32 28Z" stroke="#333" strokeWidth="1.5"/>
                 </svg>
               </div>
-              <h3 className="value-card-title">Expert<br />Innovation</h3>
+              <h3 className="value-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'value2Title') }}></h3>
               <p className="value-card-text">
-                Infusing innovation in every aspect of solution delivery by nurturing an innovation powerhouse within Diostec software solutions
+                {t('about', 'value2Desc')}
               </p>
             </div>
 
@@ -527,9 +529,9 @@ export default function AboutUs() {
                   <path d="M28 32H36M28 34H36" stroke="#333" strokeWidth="1"/>
                 </svg>
               </div>
-              <h3 className="value-card-title">Information<br />Security</h3>
+              <h3 className="value-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'value3Title') }}></h3>
               <p className="value-card-text">
-                State of the art security protocols and ISMS practices ingrained in the very DNA of Diostec software solutions
+                {t('about', 'value3Desc')}
               </p>
             </div>
 
@@ -543,9 +545,9 @@ export default function AboutUs() {
                   <path d="M20 24L24 28L28 24M36 24L40 28L44 24" stroke="#f5ba93" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="value-card-title">Immense value<br />proposition</h3>
+              <h3 className="value-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'value4Title') }}></h3>
               <p className="value-card-text">
-                Delivering beyond maximum value to the client through intelligent automation and innovation in all aspects of solution delivery
+                {t('about', 'value4Desc')}
               </p>
             </div>
 
@@ -561,9 +563,9 @@ export default function AboutUs() {
                   <path d="M24 24L22 22M40 24L42 22" stroke="#f5ba93" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="value-card-title">Client<br />Centric Engagement</h3>
+              <h3 className="value-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'value5Title') }}></h3>
               <p className="value-card-text">
-                Aligning with our client's best interests in every move and keeping them informed of every action with impeccable transparency all through the engagement
+                {t('about', 'value5Desc')}
               </p>
             </div>
 
@@ -577,9 +579,9 @@ export default function AboutUs() {
                   <path d="M20 34C18 35 16 37 16 40M44 34C46 35 48 37 48 40" stroke="#f5ba93" strokeWidth="1.5"/>
                 </svg>
               </div>
-              <h3 className="value-card-title">Employee<br />Wellness</h3>
+              <h3 className="value-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'value6Title') }}></h3>
               <p className="value-card-text">
-                Empowering our pillars of strength to grow along with the organization and being invested in all aspects of their professional and personal wellness
+                {t('about', 'value6Desc')}
               </p>
             </div>
 
@@ -594,9 +596,9 @@ export default function AboutUs() {
                   <circle cx="32" cy="46" r="2" fill="#f5ba93"/>
                 </svg>
               </div>
-              <h3 className="value-card-title">Efficient utilization<br />of resources</h3>
+              <h3 className="value-card-title" dangerouslySetInnerHTML={{ __html: t('about', 'value7Title') }}></h3>
               <p className="value-card-text">
-                Extending our social responsibilities from 'Giving back to the society' to 'Cutting back on the resources' that we use.
+                {t('about', 'value7Desc')}
               </p>
             </div>
           </div>
@@ -622,18 +624,18 @@ export default function AboutUs() {
 
             <div className="footer-nav">
          <div className="footer-nav-item" onClick={() => { navigate('/services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-                <span className="footer-nav-label">WHAT WE DO?</span>
-                <h3 className="footer-nav-title">Services</h3>
+                <span className="footer-nav-label">{t('home', 'footerWhatLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerWhatTitle')}</h3>
               </div>
 
               <div className="footer-nav-item" onClick={() => { navigate('/about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-                <span className="footer-nav-label">WHO WE ARE?</span>
-                <h3 className="footer-nav-title">About Us</h3>
+                <span className="footer-nav-label">{t('home', 'footerWhoLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerWhoTitle')}</h3>
               </div>
 
-              <div className="footer-nav-item">
-                <span className="footer-nav-label">HOW WE DELIVER</span>
-                <h3 className="footer-nav-title">Contact Us</h3>
+              <div className="footer-nav-item" onClick={() => { navigate('/contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
+                <span className="footer-nav-label">{t('home', 'footerHowLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerHowTitle')}</h3>
               </div>
             </div>
 
@@ -641,22 +643,22 @@ export default function AboutUs() {
             <div className="footer-social">
               <div className="social-link">
                 <span className="social-icon">f</span>
-                <span className="social-text">FACEBOOK</span>
+                <span className="social-text">{t('home', 'footerFacebook')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">𝕏</span>
-                <span className="social-text">TWITTER</span>
+                <span className="social-text">{t('home', 'footerTwitter')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">in</span>
-                <span className="social-text">LINKEDIN</span>
+                <span className="social-text">{t('home', 'footerLinkedin')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">▶</span>
-                <span className="social-text">YOUTUBE</span>
+                <span className="social-text">{t('home', 'footerYoutube')}</span>
                 <span className="social-arrow">↗</span>
               </div>
             </div>
@@ -665,11 +667,11 @@ export default function AboutUs() {
             <div className="footer-bottom">
               <div className="footer-address">
                 <span className="address-icon">📍</span>
-                <span className="address-text">Conrad Office Tower, Sheikh Zayed Road, 115143 Dubai, UAE</span>
+                <span className="address-text">{t('home', 'footerAddress')}</span>
               </div>
 
               <div className="footer-copyright">
-                Copyright © 2018 diostec, All rights reserved.
+                {t('home', 'footerCopyright')}
               </div>
 
               <div className="footer-phone">

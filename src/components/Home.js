@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "./SEO";
+import { useTranslation } from "../useTranslation";
 import service from "../assets/services.jpg";
 import hero1 from "../assets/hero1.png";
 import hero2 from "../assets/hero2.png";
@@ -21,6 +22,7 @@ import "./Home.css";
 
 export default function Home() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
   const heroImages = [hero1, hero2, hero3];
 
@@ -176,15 +178,15 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-left">
               <h1 className="hero-title">
-               Future-Ready Technology for Future-Ready Companies
+               {t('home', 'heroTitle')}
               </h1>
 
               <p className="hero-description">
-                Delivering powerful IT and AI services designed to scale your business and transform your operations.
+                {t('home', 'heroDescription')}
               </p>
 
-              <button className="cta-btn">
-                BEGIN TODAY WITH US
+              <button className="cta-btn" onClick={() => { navigate('/contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                {t('home', 'ctaButton')}
                 <span className="btn-icon">↗</span>
               </button>
             </div>
@@ -193,26 +195,23 @@ export default function Home() {
           {/* FEATURE CARDS */}
           <div className="feature-cards reveal">
             <div className="feature-card">
-              <h3 className="feature-title1">Smarter insights</h3>
+              <h3 className="feature-title1">{t('home', 'feature1Title')}</h3>
               <p className="feature-description1">
-                Make faster, data-driven decisions powered<br />
-                by real-time AI analysis and prediction.
+                {t('home', 'feature1Desc')}
               </p>
             </div>
 
             <div className="feature-card">
-              <h3 className="feature-title1">Integrated AI solutions</h3>
+              <h3 className="feature-title1">{t('home', 'feature2Title')}</h3>
               <p className="feature-description1">
-                No extra tools or plugins needed.<br />
-                Scalable AI from day one.
+                {t('home', 'feature2Desc')}
               </p>
             </div>
 
             <div className="feature-card">
-              <h3 className="feature-title1">End-to-end automation</h3>
+              <h3 className="feature-title1">{t('home', 'feature3Title')}</h3>
               <p className="feature-description1">
-                Eliminate bottlenecks with intelligent<br />
-                workflows that never leave you guessing.
+                {t('home', 'feature3Desc')}
               </p>
             </div>
           </div>
@@ -224,13 +223,13 @@ export default function Home() {
         <div className="who-container">
           <div className="who-label">
             <span className="green-dot"></span>
-            Who We Are?
+            {t('home', 'whoWeAreLabel')}
           </div>
 
           <h2 className="who-title">
-            We helping <span className="img-text"><span className="emoji-globe"></span></span> grow businesses<br />
-            and <span className="img-text"><span className="emoji-chart"></span></span> scale with smart, data-driven<br />
-            AI agency <span className="img-text"><span className="metallic-bar"></span></span>
+            {t('home', 'whoWeAreTitle1')} <span className="img-text"><span className="emoji-globe"></span></span> {t('home', 'whoWeAreTitle2')}<br />
+            {t('home', 'whoWeAreTitle3')} <span className="img-text"><span className="emoji-chart"></span></span> {t('home', 'whoWeAreTitle4')}<br />
+            {t('home', 'whoWeAreTitle5')} <span className="img-text"><span className="metallic-bar"></span></span>
           </h2>
 
           <div className="floating-dots">
@@ -247,7 +246,7 @@ export default function Home() {
     {/* Left Top Label */}
     <div className="services-label-row">
       <span className="green-dot-heading"></span>
-      <span className="services-label-text">Our Main Services</span>
+      <span className="services-label-text">{t('home', 'servicesLabel')}</span>
 
       
     </div>
@@ -255,12 +254,12 @@ export default function Home() {
     {/* Main Text + Button */}
     <div className="services-heading-main">
       <h2 className="services-heading-title">
-        Helping you grow <br />
-        <span className="ai-text">with the power of AI</span>
+        {t('home', 'servicesTitle1')} <br />
+        <span className="ai-text">{t('home', 'servicesTitle2')}</span>
       </h2>
 
       <button className="services-view-btn" onClick={() => navigate('/services')}>
-        VIEW MORE SERVICES
+        {t('home', 'servicesViewBtn')}
         <span className="services-btn-icon">↗</span>
       </button>
     </div>
@@ -274,97 +273,82 @@ export default function Home() {
         <div className="services-wrapper">
 
           <div className="service-item">
-            <h3 className="service-title-vertical">Cloud Services</h3>
+            <h3 className="service-title-vertical">{t('home', 'cloudTitle')}</h3>
             <div className="service-content">
               <div className="service-text-content">
-                <h4 className="service-content-title">Cloud Services</h4>
+                <h4 className="service-content-title">{t('home', 'cloudTitle')}</h4>
                 <p className="service-description">
-                  Transform your business with scalable cloud infrastructure. We deliver enterprise-grade 
-                  cloud solutions that enhance performance, reduce costs, and ensure seamless scalability. 
-                  From migration to optimization, our experts architect cloud environments that drive 
-                  innovation and accelerate your digital transformation journey.
+                  {t('home', 'cloudDesc')}
                 </p>
                 <button onClick={() => navigate('/services')} className="service-learn-btn">
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={cloud} alt="Cloud Services" />
+              <img src={cloud} alt={t('home', 'cloudTitle')} />
             </div>
           </div>
 
           <div className="service-item">
-            <h3 className="service-title-vertical">BI Analytical Services</h3>
+            <h3 className="service-title-vertical">{t('home', 'biTitle')}</h3>
             <div className="service-content">
               <div className="service-text-content">
-                <h4 className="service-content-title">BI Analytical Services</h4>
+                <h4 className="service-content-title">{t('home', 'biTitle')}</h4>
                 <p className="service-description">
-                  Unlock the power of your data with advanced Business Intelligence solutions. We transform 
-                  raw data into actionable insights through interactive dashboards, predictive analytics, 
-                  and intelligent reporting. Make data-driven decisions faster and stay ahead of market 
-                  trends with our comprehensive BI expertise.
+                  {t('home', 'biDesc')}
                 </p>
                 <button onClick={() => navigate('/services')} className="service-learn-btn">
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={bi} alt="BI Analytical Services" />
+              <img src={bi} alt={t('home', 'biTitle')} />
             </div>
           </div>
 
           <div className="service-item">
-            <h3 className="service-title-vertical">QA Services</h3>
+            <h3 className="service-title-vertical">{t('home', 'qaTitle')}</h3>
             <div className="service-content">
               <div className="service-text-content">
-                <h4 className="service-content-title">QA Services</h4>
+                <h4 className="service-content-title">{t('home', 'qaTitle')}</h4>
                 <p className="service-description">
-                  Ensure flawless software delivery with our comprehensive Quality Assurance solutions. 
-                  We employ cutting-edge testing methodologies, automation frameworks, and continuous 
-                  testing practices to guarantee superior product quality. From functional to performance 
-                  testing, we safeguard your reputation with zero-defect releases.
+                  {t('home', 'qaDesc')}
                 </p>
                 <button onClick={() => navigate('/services')} className="service-learn-btn">
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={qa} alt="QA Services" />
+              <img src={qa} alt={t('home', 'qaTitle')} />
             </div>
           </div>
 
           <div className="service-item">
-            <h3 className="service-title-vertical">Managed Services</h3>
+            <h3 className="service-title-vertical">{t('home', 'mgTitle')}</h3>
             <div className="service-content">
               <div className="service-text-content">
-                <h4 className="service-content-title">Managed Services</h4>
+                <h4 className="service-content-title">{t('home', 'mgTitle')}</h4>
                 <p className="service-description">
-                  Focus on your core business while we manage your IT infrastructure. Our proactive 
-                  managed services provide 24/7 monitoring, maintenance, and support to ensure optimal 
-                  system performance. Reduce downtime, enhance security, and achieve operational 
-                  excellence with our dedicated team of experts.
+                  {t('home', 'mgDesc')}
                 </p>
                 <button onClick={() => navigate('/services')} className="service-learn-btn">
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={mg} alt="Managed Services" />
+              <img src={mg} alt={t('home', 'mgTitle')} />
             </div>
           </div>
 
           <div className="service-item">
-            <h3 className="service-title-vertical">AMS Services</h3>
+            <h3 className="service-title-vertical">{t('home', 'amsTitle')}</h3>
             <div className="service-content">
               <div className="service-text-content">
-                <h4 className="service-content-title">AMS Services</h4>
+                <h4 className="service-content-title">{t('home', 'amsTitle')}</h4>
                 <p className="service-description">
-                  Maximize your application investments with our Application Management Services. We provide 
-                  end-to-end support, maintenance, and enhancement for your critical applications. From 
-                  incident resolution to performance optimization, our AMS ensures your applications run 
-                  smoothly, efficiently, and align with evolving business needs.
+                  {t('home', 'amsDesc')}
                 </p>
                 <button onClick={() => navigate('/services')} className="service-learn-btn">
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={ai} alt="AMS Services" />
+              <img src={ai} alt={t('home', 'amsTitle')} />
             </div>
           </div>
 
@@ -398,17 +382,15 @@ export default function Home() {
         <div className="project-card-content">
           <div className="project-info">
             <span className="project-green-dot"></span>
-            <h3 className="project-card-title">AI-Powered Customer Support Platform</h3>
+            <h3 className="project-card-title">{t('home', 'project1Title')}</h3>
             <p className="project-card-description">
-              Developed an intelligent chatbot system that reduced response time by 70% and handled
-              50,000+ customer queries monthly. The NLP-powered solution achieved 95% accuracy in
-              intent recognition, significantly improving customer satisfaction scores.
+              {t('home', 'project1Desc')}
             </p>
             
             <div className="project-details">
               <div className="project-detail-item">
-                <span className="detail-label">Industry:</span>
-                <span className="detail-value green">Data Processing</span>
+                <span className="detail-label">{t('home', 'industryLabel')}</span>
+                <span className="detail-value green">{t('home', 'project1Industry')}</span>
               </div>
               {/* <div className="project-detail-item">
                 <span className="detail-label">Country:</span>
@@ -417,7 +399,7 @@ export default function Home() {
             </div>
 
             <div className="project-technologies">
-              <span className="tech-label">Core Technologies:</span>
+              <span className="tech-label">{t('home', 'techLabel')}</span>
               <div className="tech-icons">
                 <div className="tech-icon">🔄</div>
                 <div className="tech-icon">⚪</div>
@@ -426,7 +408,7 @@ export default function Home() {
             </div>
 
             <button onClick={() => navigate('/services')} className="project-read-btn">
-              READ MORE
+              {t('home', 'readMoreBtn')}
               <span className="read-btn-arrow">↗</span>
             </button>
           </div>
@@ -442,17 +424,15 @@ export default function Home() {
         <div className="project-card-content">
           <div className="project-info">
             <span className="project-green-dot"></span>
-            <h3 className="project-card-title">Enterprise E-Commerce Transformation</h3>
+            <h3 className="project-card-title">{t('home', 'project2Title')}</h3>
             <p className="project-card-description">
-              Built a scalable e-commerce platform with AI-driven recommendations that increased
-              conversion rates by 45% and average order value by 32%. The system processes 1M+
-              transactions monthly with 99.9% uptime, delivering personalized shopping experiences.
+              {t('home', 'project2Desc')}
             </p>
             
             <div className="project-details">
               <div className="project-detail-item">
-                <span className="detail-label">Industry:</span>
-                <span className="detail-value green">Artificial Intelligence</span>
+                <span className="detail-label">{t('home', 'industryLabel')}</span>
+                <span className="detail-value green">{t('home', 'project2Industry')}</span>
               </div>
               {/* <div className="project-detail-item">
                 <span className="detail-label">Country:</span>
@@ -461,7 +441,7 @@ export default function Home() {
             </div>
 
             <div className="project-technologies">
-              <span className="tech-label">Core Technologies:</span>
+              <span className="tech-label">{t('home', 'techLabel')}</span>
               <div className="tech-icons">
                 <div className="tech-icon">🔄</div>
                 <div className="tech-icon">🐍</div>
@@ -470,7 +450,7 @@ export default function Home() {
             </div>
 
             <button onClick={() => navigate('/services')} className="project-read-btn">
-              READ MORE
+              {t('home', 'readMoreBtn')}
               <span className="read-btn-arrow">↗</span>
             </button>
           </div>
@@ -486,17 +466,15 @@ export default function Home() {
         <div className="project-card-content">
           <div className="project-info">
             <span className="project-green-dot"></span>
-            <h3 className="project-card-title">Smart Manufacturing Quality Control</h3>
+            <h3 className="project-card-title">{t('home', 'project3Title')}</h3>
             <p className="project-card-description">
-              Implemented an AI-powered computer vision system that automated product inspection,
-              detecting defects with 98% accuracy. The solution reduced inspection time by 80%
-              and saved $2M+ annually in quality control costs for a major manufacturer.
+              {t('home', 'project3Desc')}
             </p>
             
             <div className="project-details">
               <div className="project-detail-item">
-                <span className="detail-label">Industry:</span>
-                <span className="detail-value green">Computer Vision</span>
+                <span className="detail-label">{t('home', 'industryLabel')}</span>
+                <span className="detail-value green">{t('home', 'project3Industry')}</span>
               </div>
               {/* <div className="project-detail-item">
                 <span className="detail-label">Country:</span>
@@ -505,7 +483,7 @@ export default function Home() {
             </div>
 
             <div className="project-technologies">
-              <span className="tech-label">Core Technologies:</span>
+              <span className="tech-label">{t('home', 'techLabel')}</span>
               <div className="tech-icons">
                 <div className="tech-icon">🎨</div>
                 <div className="tech-icon">🅰️</div>
@@ -514,7 +492,7 @@ export default function Home() {
             </div>
 
             <button onClick={() => navigate('/services')} className="project-read-btn">
-              READ MORE
+              {t('home', 'readMoreBtn')}
               <span className="read-btn-arrow">↗</span>
             </button>
           </div>
@@ -530,17 +508,15 @@ export default function Home() {
         <div className="project-card-content">
           <div className="project-info">
             <span className="project-green-dot"></span>
-            <h3 className="project-card-title">Predictive Analytics Dashboard</h3>
+            <h3 className="project-card-title">{t('home', 'project4Title')}</h3>
             <p className="project-card-description">
-              Created a real-time analytics platform that forecasts business trends with 92% accuracy,
-              processing 10TB+ of data daily. The solution enabled data-driven decision making,
-              resulting in 25% revenue growth and optimized resource allocation for enterprise clients.
+              {t('home', 'project4Desc')}
             </p>
             
             <div className="project-details">
               <div className="project-detail-item">
-                <span className="detail-label">Industry:</span>
-                <span className="detail-value green">Data Science</span>
+                <span className="detail-label">{t('home', 'industryLabel')}</span>
+                <span className="detail-value green">{t('home', 'project4Industry')}</span>
               </div>
               <div className="project-detail-item">
                 <span className="detail-label">Country:</span>
@@ -549,7 +525,7 @@ export default function Home() {
             </div>
 
             <div className="project-technologies">
-              <span className="tech-label">Core Technologies:</span>
+              <span className="tech-label">{t('home', 'techLabel')}</span>
               <div className="tech-icons">
                 <div className="tech-icon">🐍</div>
                 <div className="tech-icon">📊</div>
@@ -558,7 +534,7 @@ export default function Home() {
             </div>
 
             <button onClick={() => navigate('/services')} className="project-read-btn">
-              READ MORE
+              {t('home', 'readMoreBtn')}
               <span className="read-btn-arrow">↗</span>
             </button>
           </div>
@@ -581,13 +557,13 @@ export default function Home() {
     <div className="industries-left">
       <span className="industries-label">
         <span className="industries-label-dot"></span>
-        Industries
+        {t('home', 'industriesLabel')}
       </span>
       
       <h2 className="industries-heading">
-        Expertise that<br />
-        Empowers Industries<br />
-        Worldwide
+        {t('home', 'industriesTitle1')}<br />
+        {t('home', 'industriesTitle2')}<br />
+        {t('home', 'industriesTitle3')}
       </h2>
 
       {/* Progress Bar */}
@@ -616,15 +592,15 @@ export default function Home() {
           {/* Card 1 - Banking Finance */}
           <div className="industry-slide active" data-index="0" data-color="#D97948">
             <div className="industry-slide-content">
-              <h3 className="industry-slide-title">Banking Finance Sector</h3>
+              <h3 className="industry-slide-title">{t('home', 'industry1Title')}</h3>
               <p className="industry-slide-description">
-                Enabling SMEs with innovative technologies that optimize efficiency and meet their banking needs.
+                {t('home', 'industry1Desc')}
               </p>
               <button onClick={() => navigate('/services')} className="industry-slide-btn">
                 <span className="slide-arrow">↗</span>
               </button>
               <div className="industry-slide-image">
-                <img src={banking} alt="Banking Finance" />
+                <img src={banking} alt={t('home', 'industry1Title')} />
               </div>
             </div>
           </div>
@@ -632,15 +608,15 @@ export default function Home() {
           {/* Card 2 - Insurance */}
           <div className="industry-slide" data-index="1" data-color="#1E5A8E">
             <div className="industry-slide-content">
-              <h3 className="industry-slide-title">Insurance</h3>
+              <h3 className="industry-slide-title">{t('home', 'industry2Title')}</h3>
               <p className="industry-slide-description">
-                Scalable solutions that generate customer value and enhance your company's digital journey.
+                {t('home', 'industry2Desc')}
               </p>
               <button onClick={() => navigate('/services')} className="industry-slide-btn">
                 <span className="slide-arrow">↗</span>
               </button>
               <div className="industry-slide-image">
-                <img src={incur} alt="Insurance" />
+                <img src={incur} alt={t('home', 'industry2Title')} />
               </div>
             </div>
           </div>
@@ -648,15 +624,15 @@ export default function Home() {
           {/* Card 3 - Telecom */}
           <div className="industry-slide" data-index="2" data-color="#5B2C6F">
             <div className="industry-slide-content">
-              <h3 className="industry-slide-title">Telecom</h3>
+              <h3 className="industry-slide-title">{t('home', 'industry3Title')}</h3>
               <p className="industry-slide-description">
-                Solutions that drive growth and enable businesses to thrive in the rapidly evolving digital landscape.
+                {t('home', 'industry3Desc')}
               </p>
               <button onClick={() => navigate('/services')} className="industry-slide-btn">
                 <span className="slide-arrow">↗</span>
               </button>
               <div className="industry-slide-image">
-                <img src={cell} alt="Telecom" />
+                <img src={cell} alt={t('home', 'industry3Title')} />
               </div>
             </div>
           </div>
@@ -664,15 +640,15 @@ export default function Home() {
           {/* Card 4 - Automotive */}
           <div className="industry-slide" data-index="3" data-color="#2B8FA8">
             <div className="industry-slide-content">
-              <h3 className="industry-slide-title">Automotive</h3>
+              <h3 className="industry-slide-title">{t('home', 'industry4Title')}</h3>
               <p className="industry-slide-description">
-                AI-driven automotive solutions tailored to ensure enhanced security, and state-of-the-art automation.
+                {t('home', 'industry4Desc')}
               </p>
               <button onClick={() => navigate('/services')} className="industry-slide-btn">
                 <span className="slide-arrow">↗</span>
               </button>
               <div className="industry-slide-image">
-                <img src={morden} alt="Automotive" />
+                <img src={morden} alt={t('home', 'industry4Title')} />
               </div>
             </div>
           </div>
@@ -690,11 +666,11 @@ export default function Home() {
     <div className="solutions-header">
       <span className="solutions-label">
         <span className="solutions-dot"></span>
-        Solutions
+        {t('home', 'solutionsLabel')}
       </span>
       <h2 className="solutions-title">
-        Scalable Solutions that Drive<br />
-        Meaningful Results
+        {t('home', 'solutionsTitle1')}<br />
+        {t('home', 'solutionsTitle2')}
       </h2>
     </div>
 
@@ -714,9 +690,9 @@ export default function Home() {
           </div>
         </div>
         <div className="solution-content">
-          <h3 className="solution-name">AI Solutions</h3>
+          <h3 className="solution-name">{t('home', 'solution1Name')}</h3>
           <p className="solution-description">
-            AI solutions engineered to give your business a competitive edge.
+            {t('home', 'solution1Desc')}
           </p>
         </div>
       </div>
@@ -736,9 +712,9 @@ export default function Home() {
           </div>
         </div>
         <div className="solution-content">
-          <h3 className="solution-name">Legacy Modernization</h3>
+          <h3 className="solution-name">{t('home', 'solution2Name')}</h3>
           <p className="solution-description">
-            AI-driven Legacy Modernization solutions that ensure seamless transition to modern platforms and drive innovation.
+            {t('home', 'solution2Desc')}
           </p>
         </div>
       </div>
@@ -758,9 +734,9 @@ export default function Home() {
           </div>
         </div>
         <div className="solution-content">
-          <h3 className="solution-name">Test Automation Solutions</h3>
+          <h3 className="solution-name">{t('home', 'solution3Name')}</h3>
           <p className="solution-description">
-            We deliver high quality automated testing solutions, improving efficiency and ensuring optimal value
+            {t('home', 'solution3Desc')}
           </p>
         </div>
       </div>
@@ -780,9 +756,9 @@ export default function Home() {
           </div>
         </div>
         <div className="solution-content">
-          <h3 className="solution-name">Regulatory & Compliance Solutions</h3>
+          <h3 className="solution-name">{t('home', 'solution4Name')}</h3>
           <p className="solution-description">
-            Leveraging the latest technologies, we address regulatory changes and ensure industry compliance.
+            {t('home', 'solution4Desc')}
           </p>
         </div>
       </div>
@@ -802,9 +778,9 @@ export default function Home() {
           </div>
         </div>
         <div className="solution-content">
-          <h3 className="solution-name">Credit Risk Management Solutions</h3>
+          <h3 className="solution-name">{t('home', 'solution5Name')}</h3>
           <p className="solution-description">
-            Empowering financial institutions with Basel-compliant Credit, Market & Operational Risk systems
+            {t('home', 'solution5Desc')}
           </p>
         </div>
       </div>
@@ -816,21 +792,21 @@ export default function Home() {
 <section className="why-choose-section reveal">
   <div className="why-header">
     <span className="why-dot"></span>
-    Why Should Choose Us
+    {t('home', 'whyLabel')}
     <span className="why-dot"></span>
   </div>
 
   <h2 className="why-title">
-    Your success <span className="why-icon"></span> is our mission
+    {t('home', 'whyTitle1')} <span className="why-icon"></span> {t('home', 'whyTitle2')}
   </h2>
 
   <div className="why-container">
 
     {/* LEFT */}
     <div className="why-cards-left">
-      <div className="why-card"><div className="why-icon-box"><span>👤</span></div><p>Secure, ethical & scalable AI</p></div>
-      <div className="why-card"><div className="why-icon-box"><span>💻</span></div><p>Custom-built solutions that fit you</p></div>
-      <div className="why-card"><div className="why-icon-box"><span>🎤</span></div><p>Secure, ethical, and responsible AI</p></div>
+      <div className="why-card"><div className="why-icon-box"><span>👤</span></div><p>{t('home', 'whyCard1')}</p></div>
+      <div className="why-card"><div className="why-icon-box"><span>💻</span></div><p>{t('home', 'whyCard2')}</p></div>
+      <div className="why-card"><div className="why-icon-box"><span>🎤</span></div><p>{t('home', 'whyCard3')}</p></div>
     </div>
 
     {/* CENTER */}
@@ -850,9 +826,9 @@ export default function Home() {
 
     {/* RIGHT */}
     <div className="why-cards-right">
-      <div className="why-card"><div className="why-icon-box"><span>👨‍🔬</span></div><p>Expert team of AI specialists</p></div>
-      <div className="why-card"><div className="why-icon-box"><span>🚀</span></div><p>Speed without sacrificing quality</p></div>
-      <div className="why-card"><div className="why-icon-box"><span>🎯</span></div><p>Client-centered, business-focused</p></div>
+      <div className="why-card"><div className="why-icon-box"><span>👨‍🔬</span></div><p>{t('home', 'whyCard4')}</p></div>
+      <div className="why-card"><div className="why-icon-box"><span>🚀</span></div><p>{t('home', 'whyCard5')}</p></div>
+      <div className="why-card"><div className="why-icon-box"><span>🎯</span></div><p>{t('home', 'whyCard6')}</p></div>
     </div>
 
   </div>
@@ -870,19 +846,19 @@ export default function Home() {
             </div>
 
             <div className="footer-nav">
-              <div className="footer-nav-item" onClick={() => { navigate('/services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-                <span className="footer-nav-label">WHAT WE DO?</span>
-                <h3 className="footer-nav-title">Services</h3>
+         <div className="footer-nav-item" onClick={() => { navigate('/services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
+                <span className="footer-nav-label">{t('home', 'footerWhatLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerWhatTitle')}</h3>
               </div>
 
               <div className="footer-nav-item" onClick={() => { navigate('/about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-                <span className="footer-nav-label">WHO WE ARE?</span>
-                <h3 className="footer-nav-title">About Us</h3>
+                <span className="footer-nav-label">{t('home', 'footerWhoLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerWhoTitle')}</h3>
               </div>
 
-              <div className="footer-nav-item">
-                <span className="footer-nav-label">HOW WE DELIVER</span>
-                <h3 className="footer-nav-title">Contact Us</h3>
+              <div className="footer-nav-item" onClick={() => { navigate('/contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
+                <span className="footer-nav-label">{t('home', 'footerHowLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerHowTitle')}</h3>
               </div>
             </div>
 
@@ -890,22 +866,22 @@ export default function Home() {
             <div className="footer-social">
               <div className="social-link">
                 <span className="social-icon">f</span>
-                <span className="social-text">FACEBOOK</span>
+                <span className="social-text">{t('home', 'footerFacebook')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">𝕏</span>
-                <span className="social-text">TWITTER</span>
+                <span className="social-text">{t('home', 'footerTwitter')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">in</span>
-                <span className="social-text">LINKEDIN</span>
+                <span className="social-text">{t('home', 'footerLinkedin')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">▶</span>
-                <span className="social-text">YOUTUBE</span>
+                <span className="social-text">{t('home', 'footerYoutube')}</span>
                 <span className="social-arrow">↗</span>
               </div>
             </div>
@@ -914,11 +890,11 @@ export default function Home() {
             <div className="footer-bottom">
               <div className="footer-address">
                 <span className="address-icon">📍</span>
-                <span className="address-text">Conrad Office Tower, Sheikh Zayed Road, 115143 Dubai, UAE</span>
+                <span className="address-text">{t('home', 'footerAddress')}</span>
               </div>
 
               <div className="footer-copyright">
-                Copyright © 2018 diostec, All rights reserved.
+                {t('home', 'footerCopyright')}
               </div>
 
               <div className="footer-phone">

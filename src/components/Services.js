@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from '../useTranslation';
 import SEO from './SEO';
 import './Services.css';
 
 export default function Services() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   // Scroll to top on page load
   useEffect(() => {
@@ -43,31 +45,31 @@ export default function Services() {
       {/* SERVICES HERO SECTION */}
       <section className="services-hero-section">
         <div className="services-hero-container">
-          <div className="services-breadcrumb">DIOSTEC / Services</div>
+          <div className="services-breadcrumb">{t('services', 'breadcrumb')}</div>
           
-          <h1 className="services-hero-title">DIOSTEC SOFTWARE SERVICES</h1>
+          <h1 className="services-hero-title">{t('services', 'heroTitle')}</h1>
           
           <div className="services-hero-description">
             <p className="services-description-text">
-              At Diostec Software, we build solutions Driven By Business. With over a decade of experience and more than 50 successful projects, we provide full-cycle custom software development tailored to your unique goals.
+              {t('services', 'heroPara1')}
             </p>
             <p className="services-description-text">
-              We partner with companies to streamline operations, strengthen security, and scale sustainably. From IT consulting to end-to-end development, our services are designed to drive measurable business outcomes—not just deliver code.
+              {t('services', 'heroPara2')}
             </p>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="services-about-section">
+      <section className="services-about-section reveal">
         <div className="services-about-content">
           <div className="services-about-left">
             <h2 className="services-about-title">
-              ABOUT <span className="highlight">US</span>
+              {t('services', 'aboutTitle')} <span className="highlight">{t('services', 'aboutTitleHighlight')}</span>
             </h2>
             <div className="services-stat">
-              <div className="services-stat-number">100+</div>
-              <div className="services-stat-text">Skilled<br/>Professionals</div>
+              <div className="services-stat-number">{t('services', 'aboutStatNumber')}</div>
+              <div className="services-stat-text" dangerouslySetInnerHTML={{ __html: t('services', 'aboutStatText') }}></div>
               <div className="services-profile-images">
                 <div className="profile-circle"></div>
                 <div className="profile-circle"></div>
@@ -77,17 +79,17 @@ export default function Services() {
           </div>
           <div className="services-about-right">
             <p className="services-about-description">
-              Our software development company is dedicated to providing exceptional service and support, ensuring your projects succeed and your needs are met. Here's why our clients trust us.
+              {t('services', 'aboutDesc')}
             </p>
             <button className="services-about-button" onClick={() => navigate('/about')}>
-              About Us
+              {t('services', 'aboutButton')}
             </button>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="services-features-section">
+      <section className="services-features-section reveal">
         <div className="services-features-grid">
           <div className="services-feature-card">
             <div className="feature-icon">
@@ -97,9 +99,9 @@ export default function Services() {
                 <path d="M3 10H21" stroke="currentColor" strokeWidth="2"/>
               </svg>
             </div>
-            <h3 className="feature-title">Long-Term Partnerships & Support</h3>
+            <h3 className="feature-title">{t('services', 'feature1Title')}</h3>
             <p className="feature-description">
-              With 80% of clients staying 7+ years and our team collaborating for over 5 years, we ensure dedicated long-term support.
+              {t('services', 'feature1Desc')}
             </p>
           </div>
 
@@ -109,9 +111,9 @@ export default function Services() {
                 <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 className="feature-title">Faster Software Development</h3>
+            <h3 className="feature-title">{t('services', 'feature2Title')}</h3>
             <p className="feature-description">
-              We cut development time by 50%, speeding up POC, prototypes, and delivery with pre-built solutions.
+              {t('services', 'feature2Desc')}
             </p>
           </div>
 
@@ -122,9 +124,9 @@ export default function Services() {
                 <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
               </svg>
             </div>
-            <h3 className="feature-title">Quality Assurance & Standards Compliance</h3>
+            <h3 className="feature-title">{t('services', 'feature3Title')}</h3>
             <p className="feature-description">
-              Adherence to CMMI and ISO standards for continuous improvement, quality, and process optimization.
+              {t('services', 'feature3Desc')}
             </p>
           </div>
 
@@ -136,19 +138,19 @@ export default function Services() {
                 <path d="M19.07 4.93L16.95 7.05M7.05 16.95L4.93 19.07M19.07 19.07L16.95 16.95M7.05 7.05L4.93 4.93" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </div>
-            <h3 className="feature-title">Agile and SCRUM Methodologies</h3>
+            <h3 className="feature-title">{t('services', 'feature4Title')}</h3>
             <p className="feature-description">
-              Flexible, transparent, and collaborative project management using Agile and SCRUM methods.
+              {t('services', 'feature4Desc')}
             </p>
           </div>
         </div>
       </section>
 
       {/* What We Offer Section */}
-      <section className="services-offer-section">
+      <section className="services-offer-section reveal">
         <div className="services-offer-container">
           <h2 className="services-offer-title">
-            WHAT WE <span className="highlight-blue">OFFER</span>
+            {t('services', 'offerTitlePart1')} <span className="highlight-blue">{t('services', 'offerTitlePart2')}</span>
           </h2>
 
           <div className="services-offer-grid">
@@ -159,9 +161,9 @@ export default function Services() {
                   <path d="M8 3H6C4.89543 3 4 3.89543 4 5V7M8 3H16M8 3V5M16 3H18C19.1046 3 20 3.89543 20 5V7M16 3V5M4 7V17M4 7H20M4 17V19C4 20.1046 4.89543 21 6 21H8M4 17H8M20 7V17M20 17V19C20 20.1046 19.1046 21 18 21H16M20 17H16M8 21V17M8 21H16M16 21V17M8 17H16" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">Digital Transformation</h3>
+              <h3 className="service-offer-title">{t('services', 'offer1Title')}</h3>
               <p className="service-offer-description">
-                Evaluation and modernization of existing systems to improve efficiency, competitiveness, and future-readiness with a detailed transformation plan.
+                {t('services', 'offer1Desc')}
               </p>
             </div>
 
@@ -171,9 +173,9 @@ export default function Services() {
                   <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">IT Consulting</h3>
+              <h3 className="service-offer-title">{t('services', 'offer2Title')}</h3>
               <p className="service-offer-description">
-                Expert advice to align IT strategies with business objectives, enhance security, and drive digital transformation.
+                {t('services', 'offer2Desc')}
               </p>
             </div>
 
@@ -184,9 +186,9 @@ export default function Services() {
                   <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">DevOps Consulting Services</h3>
+              <h3 className="service-offer-title">{t('services', 'offer3Title')}</h3>
               <p className="service-offer-description">
-                End-to-end DevOps strategies to automate deployments, improve collaboration, and enhance software delivery speed, quality, and resilience.
+                {t('services', 'offer3Desc')}
               </p>
             </div>
 
@@ -199,9 +201,9 @@ export default function Services() {
                   <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">Infrastructure Services</h3>
+              <h3 className="service-offer-title">{t('services', 'offer4Title')}</h3>
               <p className="service-offer-description">
-                Comprehensive support for managing and optimizing IT infrastructure, including cloud migration, scalability, and performance improvements.
+                {t('services', 'offer4Desc')}
               </p>
             </div>
 
@@ -213,9 +215,9 @@ export default function Services() {
                   <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">IT Support</h3>
+              <h3 className="service-offer-title">{t('services', 'offer5Title')}</h3>
               <p className="service-offer-description">
-                Ongoing technical support and maintenance to ensure system reliability, security, and performance, minimizing downtime and disruptions.
+                {t('services', 'offer5Desc')}
               </p>
             </div>
 
@@ -225,9 +227,9 @@ export default function Services() {
                   <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">Dedicated Development Team</h3>
+              <h3 className="service-offer-title">{t('services', 'offer6Title')}</h3>
               <p className="service-offer-description">
-                Scalable, cross-functional engineering teams embedded into your workflow to accelerate delivery, reduce overhead, and adapt to evolving business needs.
+                {t('services', 'offer6Desc')}
               </p>
             </div>
 
@@ -237,9 +239,9 @@ export default function Services() {
                   <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">Web Development</h3>
+              <h3 className="service-offer-title">{t('services', 'offer7Title')}</h3>
               <p className="service-offer-description">
-                Full-cycle development focused on custom, user-friendly, and scalable solutions.
+                {t('services', 'offer7Desc')}
               </p>
             </div>
 
@@ -250,9 +252,9 @@ export default function Services() {
                   <path d="M12 18h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">Mobile App Development</h3>
+              <h3 className="service-offer-title">{t('services', 'offer8Title')}</h3>
               <p className="service-offer-description">
-                Tailored mobile app solutions to enhance customer engagement and business operations.
+                {t('services', 'offer8Desc')}
               </p>
             </div>
 
@@ -264,9 +266,9 @@ export default function Services() {
                   <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">UI/UX Design</h3>
+              <h3 className="service-offer-title">{t('services', 'offer9Title')}</h3>
               <p className="service-offer-description">
-                Expert design services to create intuitive, visually appealing interfaces for web and mobile applications.
+                {t('services', 'offer9Desc')}
               </p>
             </div>
 
@@ -276,9 +278,9 @@ export default function Services() {
                   <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">Testing & QA</h3>
+              <h3 className="service-offer-title">{t('services', 'offer10Title')}</h3>
               <p className="service-offer-description">
-                Comprehensive testing services, including unit, integration, and end-to-end (E2E) testing.
+                {t('services', 'offer10Desc')}
               </p>
             </div>
 
@@ -290,9 +292,9 @@ export default function Services() {
                   <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">MVP Development</h3>
+              <h3 className="service-offer-title">{t('services', 'offer11Title')}</h3>
               <p className="service-offer-description">
-                Rapid development of Minimum Viable Products to test ideas, validate concepts, and speed up time-to-market with minimal risk.
+                {t('services', 'offer11Desc')}
               </p>
             </div>
 
@@ -302,9 +304,9 @@ export default function Services() {
                   <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">AI Development</h3>
+              <h3 className="service-offer-title">{t('services', 'offer12Title')}</h3>
               <p className="service-offer-description">
-                Custom AI solutions to automate processes, enhance decision-making, and drive innovation tailored to your business needs.
+                {t('services', 'offer12Desc')}
               </p>
             </div>
 
@@ -315,9 +317,9 @@ export default function Services() {
                   <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">ML Development</h3>
+              <h3 className="service-offer-title">{t('services', 'offer13Title')}</h3>
               <p className="service-offer-description">
-                Machine learning services to build predictive models, optimize operations, and uncover insights from data for competitive advantage.
+                {t('services', 'offer13Desc')}
               </p>
             </div>
 
@@ -327,9 +329,9 @@ export default function Services() {
                   <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="service-offer-title">Product Discovery</h3>
+              <h3 className="service-offer-title">{t('services', 'offer14Title')}</h3>
               <p className="service-offer-description">
-                Strategic discovery workshops to define product vision, identify requirements, and align technical solutions with business goals.
+                {t('services', 'offer14Desc')}
               </p>
             </div>
           </div>
@@ -337,11 +339,11 @@ export default function Services() {
       </section>
 
       {/* Application Design & Development Section */}
-      <section className="services-app-design-section">
+      <section className="services-app-design-section reveal">
         <div className="services-app-design-container">
-          <h2 className="services-app-design-title">Application Design & Development</h2>
+          <h2 className="services-app-design-title">{t('services', 'appDesignTitle')}</h2>
           <p className="services-app-design-subtitle">
-            Highly functional and structured services that design and development services that enable considerable cost savings, improved quality, process improvements, and most importantly the benefits of high offshore staffing ratios.
+            {t('services', 'appDesignSubtitle')}
           </p>
 
           <div className="services-app-design-grid">
@@ -350,9 +352,9 @@ export default function Services() {
                 <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Solution Architecture" />
               </div>
               <div className="app-design-content">
-                <h3 className="app-design-card-title">Solution architecture & design services</h3>
+                <h3 className="app-design-card-title">{t('services', 'appDesign1Title')}</h3>
                 <p className="app-design-card-description">
-                  Enabling your organization to best understand technology and chart out the most efficient software architecture to accelerate your business potential and drive transformative growth with innovative solutions.
+                  {t('services', 'appDesign1Desc')}
                 </p>
               </div>
             </div>
@@ -362,9 +364,9 @@ export default function Services() {
                 <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="Prototype Development" />
               </div>
               <div className="app-design-content">
-                <h3 className="app-design-card-title">Prototype development services</h3>
+                <h3 className="app-design-card-title">{t('services', 'appDesign2Title')}</h3>
                 <p className="app-design-card-description">
-                  Diostec's expertise in developing complex applications enables us to shape your novel ideas to best understand their feasibility in the market, validate concepts, and accelerate time-to-market with minimal investment risk.
+                  {t('services', 'appDesign2Desc')}
                 </p>
               </div>
             </div>
@@ -374,9 +376,9 @@ export default function Services() {
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Application Enhancement" />
               </div>
               <div className="app-design-content">
-                <h3 className="app-design-card-title">Application enhancement services</h3>
+                <h3 className="app-design-card-title">{t('services', 'appDesign3Title')}</h3>
                 <p className="app-design-card-description">
-                  Upgrading the capabilities of your existing applications to accommodate the latest technology features to meet your dynamic business requirements effectively, ensuring scalability, performance, and competitive advantage.
+                  {t('services', 'appDesign3Desc')}
                 </p>
               </div>
             </div>
@@ -385,75 +387,75 @@ export default function Services() {
       </section>
 
       {/* Maintenance Approach Section */}
-      <section className="services-maintenance-section">
+      <section className="services-maintenance-section reveal">
         <div className="services-maintenance-container">
           <div className="maintenance-left">
-            <h2 className="maintenance-title">Diostec's Approach for Maintenance</h2>
+            <h2 className="maintenance-title">{t('services', 'maintenanceTitle')}</h2>
             <p className="maintenance-description">
-              Diostec's four-stage approach comprises application maintenance and production support that is supplemented with a unique set of additional processes, which bring measurable cost advantage and operational efficiency to your business operations.
+              {t('services', 'maintenanceDesc')}
             </p>
           </div>
 
           <div className="maintenance-right">
             <div className="maintenance-stage">
               <div className="stage-header initiation">
-                <h3 className="stage-title">Initiation</h3>
+                <h3 className="stage-title">{t('services', 'maintenanceStage1')}</h3>
               </div>
               <ul className="stage-list">
-                <li>Assessment</li>
-                <li>Finalize Scope</li>
-                <li>Requirements</li>
-                <li>Contract</li>
-                <li>Environment</li>
-                <li>Setup</li>
-                <li>NDA</li>
-                <li>Prioritization</li>
-                <li>Communication</li>
-                <li>Strategy</li>
+                <li>{t('services', 'stage1Item1')}</li>
+                <li>{t('services', 'stage1Item2')}</li>
+                <li>{t('services', 'stage1Item3')}</li>
+                <li>{t('services', 'stage1Item4')}</li>
+                <li>{t('services', 'stage1Item5')}</li>
+                <li>{t('services', 'stage1Item6')}</li>
+                <li>{t('services', 'stage1Item7')}</li>
+                <li>{t('services', 'stage1Item8')}</li>
+                <li>{t('services', 'stage1Item9')}</li>
+                <li>{t('services', 'stage1Item10')}</li>
               </ul>
             </div>
 
             <div className="maintenance-stage">
               <div className="stage-header knowledge">
-                <h3 className="stage-title">Knowledge Acquisition</h3>
+                <h3 className="stage-title">{t('services', 'maintenanceStage2')}</h3>
               </div>
               <ul className="stage-list">
-                <li>Business</li>
-                <li>Process</li>
-                <li>Technology</li>
-                <li>Standards</li>
-                <li>Execution Strategy</li>
-                <li>History</li>
-                <li>Analysis</li>
-                <li>Documentation</li>
+                <li>{t('services', 'stage2Item1')}</li>
+                <li>{t('services', 'stage2Item2')}</li>
+                <li>{t('services', 'stage2Item3')}</li>
+                <li>{t('services', 'stage2Item4')}</li>
+                <li>{t('services', 'stage2Item5')}</li>
+                <li>{t('services', 'stage2Item6')}</li>
+                <li>{t('services', 'stage2Item7')}</li>
+                <li>{t('services', 'stage2Item8')}</li>
               </ul>
             </div>
 
             <div className="maintenance-stage">
               <div className="stage-header transition">
-                <h3 className="stage-title">Transition & Pilot</h3>
+                <h3 className="stage-title">{t('services', 'maintenanceStage3')}</h3>
               </div>
               <ul className="stage-list">
-                <li>Clarification</li>
-                <li>Pilot Planning</li>
-                <li>Pilot Execution</li>
-                <li>Tracking Metrics</li>
-                <li>Reporting</li>
-                <li>Improvement Plan</li>
+                <li>{t('services', 'stage3Item1')}</li>
+                <li>{t('services', 'stage3Item2')}</li>
+                <li>{t('services', 'stage3Item3')}</li>
+                <li>{t('services', 'stage3Item4')}</li>
+                <li>{t('services', 'stage3Item5')}</li>
+                <li>{t('services', 'stage3Item6')}</li>
               </ul>
             </div>
 
             <div className="maintenance-stage">
               <div className="stage-header operational">
-                <h3 className="stage-title">Operational State</h3>
+                <h3 className="stage-title">{t('services', 'maintenanceStage4')}</h3>
               </div>
               <ul className="stage-list">
-                <li>Emergency Data Fixes</li>
-                <li>Emergency Code Fixes</li>
-                <li>CR Planning & execution</li>
-                <li>Tracking Metrics</li>
-                <li>SLA Reporting</li>
-                <li>Causal Analysis</li>
+                <li>{t('services', 'stage4Item1')}</li>
+                <li>{t('services', 'stage4Item2')}</li>
+                <li>{t('services', 'stage4Item3')}</li>
+                <li>{t('services', 'stage4Item4')}</li>
+                <li>{t('services', 'stage4Item5')}</li>
+                <li>{t('services', 'stage4Item6')}</li>
               </ul>
             </div>
           </div>
@@ -461,21 +463,21 @@ export default function Services() {
       </section>
 
       {/* Our Process Section */}
-      <section className="services-process-section">
+      <section className="services-process-section reveal">
         <div className="services-process-container">
           <div className="process-image">
             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop" alt="Professional Team Member" />
           </div>
 
           <div className="process-content">
-            <h2 className="process-title">OUR PROCESS</h2>
+            <h2 className="process-title">{t('services', 'processTitle')}</h2>
 
             <div className="process-step">
               <div className="step-number">1</div>
               <div className="step-content">
-                <h3 className="step-title">NDA & Introductory Session</h3>
+                <h3 className="step-title">{t('services', 'process1Title')}</h3>
                 <p className="step-description">
-                  Our cooperation begins by signing an NDA and scheduling a quick introductory call to understand your needs and requirements. We then explain how our expertise can help you achieve your goals.
+                  {t('services', 'process1Desc')}
                 </p>
               </div>
             </div>
@@ -483,9 +485,9 @@ export default function Services() {
             <div className="process-step">
               <div className="step-number">2</div>
               <div className="step-content">
-                <h3 className="step-title">Creating Full Proposal for Scope Doc</h3>
+                <h3 className="step-title">{t('services', 'process2Title')}</h3>
                 <p className="step-description">
-                  We send a proposal to start working on a Scope Document. This detailed guide outlines the structure and design of a software system to align technical implementation and business needs.
+                  {t('services', 'process2Desc')}
                 </p>
               </div>
             </div>
@@ -493,9 +495,9 @@ export default function Services() {
             <div className="process-step">
               <div className="step-number">3</div>
               <div className="step-content">
-                <h3 className="step-title">Working on Scope Doc with Tech Leads</h3>
+                <h3 className="step-title">{t('services', 'process3Title')}</h3>
                 <p className="step-description">
-                  We set up a call with our tech leads, who dive into the project details and create a Scope Doc with you. This process typically involves 3-5 calls, spanning 40-60 hours, and is completed within 1-2 weeks.
+                  {t('services', 'process3Desc')}
                 </p>
               </div>
             </div>
@@ -503,9 +505,9 @@ export default function Services() {
             <div className="process-step">
               <div className="step-number">4</div>
               <div className="step-content">
-                <h3 className="step-title">Finalizing the Development Proposal</h3>
+                <h3 className="step-title">{t('services', 'process4Title')}</h3>
                 <p className="step-description">
-                  We finalize the scope of work and submit a detailed proposal for the entire development process. This includes key milestones, deliverables, and timelines to ensure transparency and clear expectations.
+                  {t('services', 'process4Desc')}
                 </p>
               </div>
             </div>
@@ -513,28 +515,28 @@ export default function Services() {
             <div className="process-step">
               <div className="step-number">5</div>
               <div className="step-content">
-                <h3 className="step-title">Working with the Development Team</h3>
+                <h3 className="step-title">{t('services', 'process5Title')}</h3>
                 <p className="step-description">
-                  We plan and work in weekly sprints using Scrum methodology. The team holds daily 30-minute stand-up meetings to inform and involve you in updates, releases, and retrospectives. We use GitLab to manage and track tasks.
+                  {t('services', 'process5Desc')}
                 </p>
               </div>
             </div>
 
             <div className="process-contact-card">
               <div className="contact-info">
-                <h3 className="contact-name">Diostec Team</h3>
-                <p className="contact-role">Business Development Manager</p>
+                <h3 className="contact-name">{t('services', 'contactName')}</h3>
+                <p className="contact-role">{t('services', 'contactRole')}</p>
               </div>
-              <button className="contact-button">Discuss Your Project</button>
+              <button className="contact-button">{t('services', 'contactButton')}</button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Business Benefits Section */}
-      <section className="services-benefits-section">
+      <section className="services-benefits-section reveal">
         <div className="services-benefits-container">
-          <h2 className="benefits-title">Business Benefits</h2>
+          <h2 className="benefits-title">{t('services', 'benefitsTitle')}</h2>
 
           <div className="benefits-grid">
             <div className="benefit-item">
@@ -544,7 +546,7 @@ export default function Services() {
                   <path d="M9 2L9 6M15 2L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3 className="benefit-title">Significant improvement in application stability</h3>
+              <h3 className="benefit-title">{t('services', 'benefit1')}</h3>
             </div>
 
             <div className="benefit-item">
@@ -555,7 +557,7 @@ export default function Services() {
                   <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="benefit-title">Cost reduction due to our variable cost approach</h3>
+              <h3 className="benefit-title">{t('services', 'benefit2')}</h3>
             </div>
 
             <div className="benefit-item">
@@ -564,7 +566,7 @@ export default function Services() {
                   <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="benefit-title">Meeting the business requirements on time</h3>
+              <h3 className="benefit-title">{t('services', 'benefit3')}</h3>
             </div>
 
             <div className="benefit-item">
@@ -573,7 +575,7 @@ export default function Services() {
                   <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="benefit-title">Knowledge Management</h3>
+              <h3 className="benefit-title">{t('services', 'benefit4')}</h3>
             </div>
 
             <div className="benefit-item">
@@ -583,7 +585,7 @@ export default function Services() {
                   <path d="M3 13L3 8L8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="benefit-title">Reduced risk of operations</h3>
+              <h3 className="benefit-title">{t('services', 'benefit5')}</h3>
             </div>
 
             <div className="benefit-item">
@@ -593,7 +595,7 @@ export default function Services() {
                   <circle cx="12" cy="10" r="1" fill="currentColor"/>
                 </svg>
               </div>
-              <h3 className="benefit-title">Improved maintenance productivity</h3>
+              <h3 className="benefit-title">{t('services', 'benefit6')}</h3>
             </div>
 
             <div className="benefit-item">
@@ -603,7 +605,7 @@ export default function Services() {
                   <path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3 className="benefit-title">Better predictability</h3>
+              <h3 className="benefit-title">{t('services', 'benefit7')}</h3>
             </div>
           </div>
         </div>
@@ -622,18 +624,18 @@ export default function Services() {
 
             <div className="footer-nav">
               <div className="footer-nav-item" onClick={() => { navigate('/services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-                <span className="footer-nav-label">WHAT WE DO?</span>
-                <h3 className="footer-nav-title">Services</h3>
+                <span className="footer-nav-label">{t('home', 'footerWhatLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerWhatTitle')}</h3>
               </div>
 
               <div className="footer-nav-item" onClick={() => { navigate('/about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
-                <span className="footer-nav-label">WHO WE ARE?</span>
-                <h3 className="footer-nav-title">About Us</h3>
+                <span className="footer-nav-label">{t('home', 'footerWhoLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerWhoTitle')}</h3>
               </div>
 
-              <div className="footer-nav-item">
-                <span className="footer-nav-label">HOW WE DELIVER</span>
-                <h3 className="footer-nav-title">Contact Us</h3>
+              <div className="footer-nav-item" onClick={() => { navigate('/contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ cursor: 'pointer' }}>
+                <span className="footer-nav-label">{t('home', 'footerHowLabel')}</span>
+                <h3 className="footer-nav-title">{t('home', 'footerHowTitle')}</h3>
               </div>
             </div>
 
@@ -641,22 +643,22 @@ export default function Services() {
             <div className="footer-social">
               <div className="social-link">
                 <span className="social-icon">f</span>
-                <span className="social-text">FACEBOOK</span>
+                <span className="social-text">{t('home', 'footerFacebook')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">𝕏</span>
-                <span className="social-text">TWITTER</span>
+                <span className="social-text">{t('home', 'footerTwitter')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">in</span>
-                <span className="social-text">LINKEDIN</span>
+                <span className="social-text">{t('home', 'footerLinkedin')}</span>
                 <span className="social-arrow">↗</span>
               </div>
               <div className="social-link">
                 <span className="social-icon">▶</span>
-                <span className="social-text">YOUTUBE</span>
+                <span className="social-text">{t('home', 'footerYoutube')}</span>
                 <span className="social-arrow">↗</span>
               </div>
             </div>
@@ -665,11 +667,11 @@ export default function Services() {
             <div className="footer-bottom">
               <div className="footer-address">
                 <span className="address-icon">📍</span>
-                <span className="address-text">Conrad Office Tower, Sheikh Zayed Road, 115143 Dubai, UAE</span>
+                <span className="address-text">{t('home', 'footerAddress')}</span>
               </div>
 
               <div className="footer-copyright">
-                Copyright © 2018 diostec, All rights reserved.
+                {t('home', 'footerCopyright')}
               </div>
 
               <div className="footer-phone">
