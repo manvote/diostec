@@ -619,7 +619,7 @@ export default function AboutUs() {
           <div className="footer-content">
             <div className="footer-email">
               <span className="email-icon">✉</span>
-              <span className="email-text">info@diostec.com</span>
+              <span className="email-text">info@diostecllc.com</span>
             </div>
 
             <div className="footer-nav">
