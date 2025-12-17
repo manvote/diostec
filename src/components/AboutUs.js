@@ -8,6 +8,20 @@ export default function AboutUs() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   
+  // Cursor Glow Effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const glow = document.querySelector('.cursor-glow');
+      if (glow) {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+      }
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => document.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+  
   // Scroll Reveal Effect
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
@@ -31,6 +45,7 @@ export default function AboutUs() {
 
   return (
     <>
+      <div className="cursor-glow"></div>
       <SEO 
         title="About Us - Diostec | Leading AI & Cloud Solutions Provider in Dubai"
         description="Learn about Diostec, established in 2018. We specialize in IT services and AI solutions, bridging the gap between talent and opportunity. Transforming businesses with cutting-edge technology in Dubai, UAE."
@@ -641,26 +656,26 @@ export default function AboutUs() {
 
             {/* Social Media Links */}
             <div className="footer-social">
-              <div className="social-link">
+              <a href="https://www.facebook.com/share/1D7R5mkM1L/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <span className="social-icon">f</span>
                 <span className="social-text">{t('home', 'footerFacebook')}</span>
                 <span className="social-arrow">↗</span>
-              </div>
+              </a>
               <div className="social-link">
                 <span className="social-icon">𝕏</span>
                 <span className="social-text">{t('home', 'footerTwitter')}</span>
                 <span className="social-arrow">↗</span>
               </div>
-              <div className="social-link">
+              <a href="https://www.linkedin.com/company/diostec-software-solutions/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="social-link">
                 <span className="social-icon">in</span>
                 <span className="social-text">{t('home', 'footerLinkedin')}</span>
                 <span className="social-arrow">↗</span>
-              </div>
-              <div className="social-link">
-                <span className="social-icon">▶</span>
-                <span className="social-text">{t('home', 'footerYoutube')}</span>
+              </a>
+              <a href="https://www.instagram.com/diostec_software_solution/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <span className="social-icon">📷</span>
+                <span className="social-text">{t('home', 'footerInstagram')}</span>
                 <span className="social-arrow">↗</span>
-              </div>
+              </a>
             </div>
 
             {/* Footer Bottom */}
@@ -675,8 +690,14 @@ export default function AboutUs() {
               </div>
 
               <div className="footer-phone">
-                <span className="phone-icon">📞</span>
-                <span className="phone-text">+91 98405 70418</span>
+                <div className="phone-item">
+                  <span className="phone-icon">📞</span>
+                  <span className="phone-text">UAE: +971 507853357</span>
+                </div>
+                <div className="phone-item">
+                  <span className="phone-icon">📞</span>
+                  <span className="phone-text">India: +91 98405 70418</span>
+                </div>
                 <button className="scroll-top-footer">↑</button>
               </div>
             </div>

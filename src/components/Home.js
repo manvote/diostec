@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "./SEO";
 import { useTranslation } from "../useTranslation";
@@ -24,7 +24,29 @@ export default function Home() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
-  const heroImages = [hero1, hero2, hero3];
+  const heroImages = useMemo(() => [hero1, hero2, hero3], []);
+
+  // ---- Cursor Glow Effect ----
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const glow = document.querySelector('.cursor-glow');
+      if (glow) {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+      }
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => document.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // ---- Preload Hero Images ----
+  useEffect(() => {
+    heroImages.forEach((imageSrc) => {
+      const img = new Image();
+      img.src = imageSrc;
+    });
+  }, [heroImages]);
 
   // ---- Hero Image Slider ----
   useEffect(() => {
@@ -166,6 +188,7 @@ export default function Home() {
 
   return (
     <>
+      <div className="cursor-glow"></div>
       <SEO 
         title="Diostec - AI & Cloud Solutions | Digital Transformation Services Dubai"
         description="Leading AI and cloud solutions provider in Dubai. Transform your business with cutting-edge AI services, cloud infrastructure, BI analytics, QA testing, and managed services. Expert digital transformation partner."
@@ -284,7 +307,7 @@ export default function Home() {
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={cloud} alt={t('home', 'cloudTitle')} />
+              <img src={cloud} alt={t('home', 'cloudTitle')} loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -300,7 +323,7 @@ export default function Home() {
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={bi} alt={t('home', 'biTitle')} />
+              <img src={bi} alt={t('home', 'biTitle')} loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -316,7 +339,7 @@ export default function Home() {
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={qa} alt={t('home', 'qaTitle')} />
+              <img src={qa} alt={t('home', 'qaTitle')} loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -332,7 +355,7 @@ export default function Home() {
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={mg} alt={t('home', 'mgTitle')} />
+              <img src={mg} alt={t('home', 'mgTitle')} loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -348,7 +371,7 @@ export default function Home() {
                   <span className="service-arrow">↗</span>
                 </button>
               </div>
-              <img src={ai} alt={t('home', 'amsTitle')} />
+              <img src={ai} alt={t('home', 'amsTitle')} loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -414,7 +437,7 @@ export default function Home() {
           </div>
 
           <div className="project-image-side">
-            <img src={service} alt="Chatbot Project" className="project-bg-image" />
+            <img src={service} alt="Chatbot Project" className="project-bg-image" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -456,7 +479,7 @@ export default function Home() {
           </div>
 
           <div className="project-image-side">
-            <img src={second} alt="E-commerce Project" className="project-bg-image" />
+            <img src={second} alt="E-commerce Project" className="project-bg-image" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -498,7 +521,7 @@ export default function Home() {
           </div>
 
           <div className="project-image-side">
-            <img src={man} alt="Computer Vision Project" className="project-bg-image" />
+            <img src={man} alt="Computer Vision Project" className="project-bg-image" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -540,7 +563,7 @@ export default function Home() {
           </div>
 
           <div className="project-image-side">
-            <img src={concept} alt="Data Science Project" className="project-bg-image" />
+            <img src={concept} alt="Data Science Project" className="project-bg-image" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -600,7 +623,7 @@ export default function Home() {
                 <span className="slide-arrow">↗</span>
               </button>
               <div className="industry-slide-image">
-                <img src={banking} alt={t('home', 'industry1Title')} />
+                <img src={banking} alt={t('home', 'industry1Title')} loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -616,7 +639,7 @@ export default function Home() {
                 <span className="slide-arrow">↗</span>
               </button>
               <div className="industry-slide-image">
-                <img src={incur} alt={t('home', 'industry2Title')} />
+                <img src={incur} alt={t('home', 'industry2Title')} loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -632,7 +655,7 @@ export default function Home() {
                 <span className="slide-arrow">↗</span>
               </button>
               <div className="industry-slide-image">
-                <img src={cell} alt={t('home', 'industry3Title')} />
+                <img src={cell} alt={t('home', 'industry3Title')} loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -648,7 +671,7 @@ export default function Home() {
                 <span className="slide-arrow">↗</span>
               </button>
               <div className="industry-slide-image">
-                <img src={morden} alt={t('home', 'industry4Title')} />
+                <img src={morden} alt={t('home', 'industry4Title')} loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -864,26 +887,26 @@ export default function Home() {
 
             {/* Social Media Links */}
             <div className="footer-social">
-              <div className="social-link">
+              <a href="https://www.facebook.com/share/1D7R5mkM1L/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <span className="social-icon">f</span>
                 <span className="social-text">{t('home', 'footerFacebook')}</span>
                 <span className="social-arrow">↗</span>
-              </div>
+              </a>
               <div className="social-link">
                 <span className="social-icon">𝕏</span>
                 <span className="social-text">{t('home', 'footerTwitter')}</span>
                 <span className="social-arrow">↗</span>
               </div>
-              <div className="social-link">
+              <a href="https://www.linkedin.com/company/diostec-software-solutions/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="social-link">
                 <span className="social-icon">in</span>
                 <span className="social-text">{t('home', 'footerLinkedin')}</span>
                 <span className="social-arrow">↗</span>
-              </div>
-              <div className="social-link">
-                <span className="social-icon">▶</span>
-                <span className="social-text">{t('home', 'footerYoutube')}</span>
+              </a>
+              <a href="https://www.instagram.com/diostec_software_solution/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <span className="social-icon">📷</span>
+                <span className="social-text">{t('home', 'footerInstagram')}</span>
                 <span className="social-arrow">↗</span>
-              </div>
+              </a>
             </div>
 
             {/* Footer Bottom */}
@@ -898,8 +921,14 @@ export default function Home() {
               </div>
 
               <div className="footer-phone">
-                <span className="phone-icon">📞</span>
-                <span className="phone-text">+91 98405 70418</span>
+                <div className="phone-item">
+                  <span className="phone-icon">📞</span>
+                  <span className="phone-text">UAE: +971 507853357</span>
+                </div>
+                <div className="phone-item">
+                  <span className="phone-icon">📞</span>
+                  <span className="phone-text">India: +91 98405 70418</span>
+                </div>
                 <button className="scroll-top-footer">↑</button>
               </div>
             </div>

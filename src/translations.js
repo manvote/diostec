@@ -135,8 +135,8 @@ export const translations = {
       footerFacebook: "FACEBOOK",
       footerTwitter: "TWITTER",
       footerLinkedin: "LINKEDIN",
-      footerYoutube: "YOUTUBE",
-      footerAddress: "Dubai: Conrad Office Tower, Sheikh Zayed Road, 115143 Dubai, UAE | Chennai: SM Towers Seevaram 1st cross St, Seevaram, Perungudi, Chennai, Tamil Nadu 600096",
+      footerInstagram: "INSTAGRAM",
+      footerAddress: "Dubai: Conrad Office Tower, Sheikh Zayed Road, 115143 Dubai, UAE | Chennai: TVH Agnitio Park (IT Park),141, Rajiv Gandhi Salai, Nehru Nagar, Perungudi, Chennai, Tamil Nadu 600096",
       footerCopyright: "Copyright © 2018 diostec, All rights reserved.",
     },
     
@@ -542,8 +542,8 @@ export const translations = {
       footerFacebook: "فيسبوك",
       footerTwitter: "تويتر",
       footerLinkedin: "لينكد إن",
-      footerYoutube: "يوتيوب",
-      footerAddress: "دبي: برج كونراد أوفيس، طريق الشيخ زايد، 115143 دبي، الإمارات العربية المتحدة | تشيناي: أبراج SM سيفارام الشارع الأول عرضي، سيفارام، بيرونجودي، تشيناي، تاميل نادو 600096",
+      footerInstagram: "إنستجرام",
+      footerAddress: "دبي: برج كونراد أوفيس، طريق الشيخ زايد، 115143 دبي، الإمارات العربية المتحدة | تشيناي: TVH Agnitio Park (IT Park),141, Rajiv Gandhi Salai, Nehru Nagar, Perungudi، تشيناي، تاميل نادو 600096",
       footerCopyright: "حقوق الطبع والنشر © 2018 ديوستك، جميع الحقوق محفوظة.",
     },
     

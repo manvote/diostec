@@ -186,6 +186,7 @@
 @media (max-width: 1024px) {
   .navbar-container {
     padding: 0 30px;
+    position: relative;
   }
 
   .logo-image {
@@ -195,6 +196,16 @@
   /* Show hamburger menu for tablets and below */
   .mobile-menu-toggle {
     display: flex;
+    position: absolute;
+    right: 30px;
+  }
+
+  .language-switch-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    padding: 8px 16px;
   }
 
   .nav-menu {
@@ -241,10 +252,6 @@
   }
 
   .language-switch-btn {
-    position: fixed;
-    top: 25px;
-    right: 70px;
-    z-index: 1001;
     margin-left: 0;
     padding: 8px 16px;
   }
@@ -270,7 +277,6 @@
   }
 
   .language-switch-btn {
-    right: 70px;
     padding: 8px 14px;
     font-size: 13px;
   }
@@ -304,7 +310,6 @@
   }
 
   .language-switch-btn {
-    right: 60px;
     padding: 6px 12px;
     font-size: 12px;
   }
@@ -323,7 +328,7 @@
    ============================================ */
 
 [dir="rtl"] .navbar-container {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 [dir="rtl"] .nav-menu {
@@ -333,8 +338,6 @@
 [dir="rtl"] .language-switch-btn {
   margin-left: 0;
   margin-right: 20px;
-  right: auto;
-  left: 20px;
 }
 
 [dir="rtl"] .nav-links li a::after {
@@ -362,15 +365,15 @@
 /* RTL Mobile Menu */
 @media (max-width: 1024px) {
   [dir="rtl"] .language-switch-btn {
-    left: 60px;
+    left: 50%;
     right: auto;
+    transform: translateX(-50%);
+    margin: 0;
   }
-}
-
-@media (max-width: 768px) {
-  [dir="rtl"] .language-switch-btn {
-    left: 50px;
+  
+  [dir="rtl"] .mobile-menu-toggle {
     right: auto;
+    left: 30px;
   }
 }
 
