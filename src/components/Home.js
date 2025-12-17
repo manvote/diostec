@@ -40,12 +40,21 @@ export default function Home() {
     return () => document.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // ---- Preload Hero Images ----
+  // ---- Preload First Hero Image Only ----
   useEffect(() => {
-    heroImages.forEach((imageSrc) => {
-      const img = new Image();
-      img.src = imageSrc;
-    });
+    // Only preload the first hero image for faster initial load
+    const img = new Image();
+    img.src = heroImages[0];
+    
+    // Preload other hero images after a delay
+    const timer = setTimeout(() => {
+      heroImages.slice(1).forEach((imageSrc) => {
+        const img = new Image();
+        img.src = imageSrc;
+      });
+    }, 1000);
+    
+    return () => clearTimeout(timer);
   }, [heroImages]);
 
   // ---- Hero Image Slider ----
@@ -437,7 +446,7 @@ export default function Home() {
           </div>
 
           <div className="project-image-side">
-            <img src={service} alt="Chatbot Project" className="project-bg-image" loading="lazy" decoding="async" />
+            <img src={service} alt="Chatbot Project" className="project-bg-image" loading="lazy" decoding="async" fetchpriority="low" />
           </div>
         </div>
       </div>
@@ -479,7 +488,7 @@ export default function Home() {
           </div>
 
           <div className="project-image-side">
-            <img src={second} alt="E-commerce Project" className="project-bg-image" loading="lazy" decoding="async" />
+            <img src={second} alt="E-commerce Project" className="project-bg-image" loading="lazy" decoding="async" fetchpriority="low" />
           </div>
         </div>
       </div>
@@ -521,7 +530,7 @@ export default function Home() {
           </div>
 
           <div className="project-image-side">
-            <img src={man} alt="Computer Vision Project" className="project-bg-image" loading="lazy" decoding="async" />
+            <img src={man} alt="Computer Vision Project" className="project-bg-image" loading="lazy" decoding="async" fetchpriority="low" />
           </div>
         </div>
       </div>
@@ -563,7 +572,7 @@ export default function Home() {
           </div>
 
           <div className="project-image-side">
-            <img src={concept} alt="Data Science Project" className="project-bg-image" loading="lazy" decoding="async" />
+            <img src={concept} alt="Data Science Project" className="project-bg-image" loading="lazy" decoding="async" fetchpriority="low" />
           </div>
         </div>
       </div>
