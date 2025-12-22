@@ -136,7 +136,7 @@ export const translations = {
       footerTwitter: "TWITTER",
       footerLinkedin: "LINKEDIN",
       footerInstagram: "INSTAGRAM",
-      footerAddress: "Dubai: Conrad Office Tower, Sheikh Zayed Road, 115143 Dubai, UAE | Chennai: TVH Agnitio Park (IT Park),141, Rajiv Gandhi Salai, Nehru Nagar, Perungudi, Chennai, Tamil Nadu 600096",
+      footerAddress: "Dubai: 3rd floor Al Khaimah Building - Port Saeed - Deira - Dubai - United Arab Emirates | Chennai: TVH Agnitio Park (IT Park),141, Rajiv Gandhi Salai, Nehru Nagar, Perungudi, Chennai, Tamil Nadu 600096",
       footerCopyright: "Copyright © 2018 diostec, All rights reserved.",
     },
     
@@ -543,7 +543,7 @@ export const translations = {
       footerTwitter: "تويتر",
       footerLinkedin: "لينكد إن",
       footerInstagram: "إنستجرام",
-      footerAddress: "دبي: برج كونراد أوفيس، طريق الشيخ زايد، 115143 دبي، الإمارات العربية المتحدة | تشيناي: TVH Agnitio Park (IT Park),141, Rajiv Gandhi Salai, Nehru Nagar, Perungudi، تشيناي، تاميل نادو 600096",
+      footerAddress: "دبي: الطابق الثالث مبنى الخيمة - ميناء سعيد - ديرة - دبي - الإمارات العربية المتحدة | تشيناي: TVH Agnitio Park (IT Park),141, Rajiv Gandhi Salai, Nehru Nagar, Perungudi، تشيناي، تاميل نادو 600096",
       footerCopyright: "حقوق الطبع والنشر © 2018 ديوستك، جميع الحقوق محفوظة.",
     },
     
