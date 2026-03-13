@@ -929,17 +929,7 @@ export default function Home() {
                 {t('home', 'footerCopyright')}
               </div>
 
-              <div className="footer-phone">
-                <div className="phone-item">
-                  <span className="phone-icon">📞</span>
-                  <span className="phone-text">UAE: +971 507853357</span>
-                </div>
-                <div className="phone-item">
-                  <span className="phone-icon">📞</span>
-                  <span className="phone-text">India: +91 98405 70418</span>
-                </div>
-                <button className="scroll-top-footer">↑</button>
-              </div>
+              <button className="scroll-top-footer">↑</button>
             </div>
           </div>
         </div>

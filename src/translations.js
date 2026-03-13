@@ -136,7 +136,7 @@ export const translations = {
       footerTwitter: "TWITTER",
       footerLinkedin: "LINKEDIN",
       footerInstagram: "INSTAGRAM",
-      footerAddress: "Dubai: 3rd floor Al Khaimah Building - Port Saeed - Deira - Dubai - United Arab Emirates | Chennai: Seevaram 1st cross St, Seevaram, Perungudi, Chennai, Tamil Nadu 600096",
+      footerAddress: "Marina Plaza - Al Marsa Street, Marina Plaza, Level 27-29 & 32, Dubai, United Arab Emirates",
       footerCopyright: "Copyright © 2018 diostec, All rights reserved.",
     },
     
@@ -543,7 +543,7 @@ export const translations = {
       footerTwitter: "تويتر",
       footerLinkedin: "لينكد إن",
       footerInstagram: "إنستجرام",
-      footerAddress: "دبي: الطابق الثالث مبنى الخيمة - ميناء سعيد - ديرة - دبي - الإمارات العربية المتحدة | تشيناي: شارع سيفارام التقاطع الأول، سيفارام، بيرونغودي، تشيناي، تاميل نادو 600096",
+      footerAddress: "Marina Plaza - Al Marsa Street, Marina Plaza, Level 27-29 & 32, Dubai, United Arab Emirates",
       footerCopyright: "حقوق الطبع والنشر © 2018 ديوستك، جميع الحقوق محفوظة.",
     },
     
